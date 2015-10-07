@@ -119,11 +119,11 @@ class EntityReferenceRevisionsEntityFormatter extends EntityReferenceRevisionsFo
   /**
    * {@inheritdoc}
    */
-  public function viewElements(FieldItemListInterface $items, $langcode) {
+  public function viewElements(FieldItemListInterface $items) {
     $view_mode = $this->getSetting('view_mode');
     $elements = array();
 
-    foreach ($this->getEntitiesToView($items, $langcode) as $delta => $entity) {
+    foreach ($this->getEntitiesToView($items) as $delta => $entity) {
       // Protect ourselves from recursive rendering.
       static $depth = 0;
       $depth++;
